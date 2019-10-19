@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1133</height>
+   </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="toolTipDuration">
+   <number>0</number>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:#4d4d4d;
+color:#dddddd;
+font-size:11px;
+QAction,QMenu::hover
+{
+	background:#474747;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:#272727;</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:#282828;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QToolBox" name="toolBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>1080</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>240</width>
+        <height>1080</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:#444;</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>240</width>
+         <height>1034</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>作业演示</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>250</y>
+          <width>80</width>
+          <height>15</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>量化演示</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>290</y>
+          <width>80</width>
+          <height>15</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>采样演示</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>220</width>
+          <height>220</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:#282828;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>240</width>
+         <height>1034</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Page 2</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1920</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>图层</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>文字</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuxuanze">
+    <property name="title">
+     <string>选择</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>滤镜</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_7">
+    <property name="title">
+     <string>视图</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_8">
+    <property name="title">
+     <string>窗口</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_9">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>图像</string>
+    </property>
+    <widget class="QMenu" name="menumoshi">
+     <property name="title">
+      <string>模式</string>
+     </property>
+     <addaction name="actionweitu"/>
+     <addaction name="actionhuidu"/>
+     <addaction name="actionRGByanse"/>
+     <addaction name="actionCMYKyanse"/>
+     <addaction name="separator"/>
+     <addaction name="action8wei_tongdao"/>
+     <addaction name="action8wei_tongdao_2"/>
+     <addaction name="action8wei_tongdao_3"/>
+    </widget>
+    <widget class="QMenu" name="menutiaozhen">
+     <property name="title">
+      <string>调整</string>
+     </property>
+     <addaction name="actionliangdu_duibidu"/>
+     <addaction name="actionsejie"/>
+     <addaction name="actionqvxian"/>
+     <addaction name="actionbaoguangdu"/>
+     <addaction name="separator"/>
+     <addaction name="actionziranbaohedu"/>
+     <addaction name="actionsexiang_baohedu"/>
+     <addaction name="actionsecaipinheng"/>
+     <addaction name="actionheibai"/>
+     <addaction name="separator"/>
+     <addaction name="actionfanxiang"/>
+     <addaction name="actionsediaofenli"/>
+     <addaction name="actionyuzhi"/>
+     <addaction name="separator"/>
+     <addaction name="actionyingying_gaoguang"/>
+     <addaction name="separator"/>
+     <addaction name="actionqvse"/>
+     <addaction name="actiontihuanyanse"/>
+     <addaction name="actionpipeiyanse"/>
+    </widget>
+    <widget class="QMenu" name="menutuxaingxuanzhuan">
+     <property name="title">
+      <string>图像旋转</string>
+     </property>
+     <addaction name="action180du"/>
+     <addaction name="actionshushizhen90du"/>
+     <addaction name="actionnishizhen90du"/>
+     <addaction name="actionrenyijiaodu"/>
+    </widget>
+    <addaction name="menumoshi"/>
+    <addaction name="menutiaozhen"/>
+    <addaction name="separator"/>
+    <addaction name="actionzidongsediao"/>
+    <addaction name="actionzidongduibidu"/>
+    <addaction name="actionzidongyanse"/>
+    <addaction name="separator"/>
+    <addaction name="actiontuxiangdaxiao"/>
+    <addaction name="actionhuabudaxiao"/>
+    <addaction name="menutuxaingxuanzhuan"/>
+    <addaction name="actioncaiqie"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="styleSheet">
+     <string notr="true">QMenu::hover{
+background:#747474;
+}</string>
+    </property>
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="actioncaijian"/>
+    <addaction name="actionchongzuo"/>
+    <addaction name="separator"/>
+    <addaction name="actionjianqie"/>
+    <addaction name="actionkaobei"/>
+    <addaction name="actionzhantie"/>
+    <addaction name="actionqingchu"/>
+    <addaction name="separator"/>
+    <addaction name="actiontianchong"/>
+    <addaction name="actionmiaobian"/>
+    <addaction name="separator"/>
+    <addaction name="actionshouxuanxiang"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionopen_file"/>
+    <addaction name="actiondakai"/>
+    <addaction name="actionzuijindakaiwenjian"/>
+    <addaction name="separator"/>
+    <addaction name="actionguanbi"/>
+    <addaction name="actioncunchu"/>
+    <addaction name="actioncunchuwei"/>
+    <addaction name="separator"/>
+    <addaction name="actiondaochu"/>
+    <addaction name="separator"/>
+    <addaction name="actiontuichu"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+   <addaction name="menuxuanze"/>
+   <addaction name="menu_6"/>
+   <addaction name="menu_7"/>
+   <addaction name="menu_8"/>
+   <addaction name="menu_9"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew_file">
+   <property name="text">
+    <string>新建</string>
+   </property>
+  </action>
+  <action name="actionopen_file">
+   <property name="text">
+    <string>新建...                                         Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actiondakai">
+   <property name="text">
+    <string>打开...                                         Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionzuijindakaiwenjian">
+   <property name="text">
+    <string>最近打开文件          Alt+Shift+Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionguanbi">
+   <property name="text">
+    <string>关闭                                            Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actioncunchu">
+   <property name="text">
+    <string>存储                                            Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actioncunchuwei">
+   <property name="text">
+    <string>存储为...                          Shift+Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actiondaochu">
+   <property name="text">
+    <string>导出</string>
+   </property>
+  </action>
+  <action name="actiontuichu">
+   <property name="text">
+    <string>退出                                            Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actioncaijian">
+   <property name="text">
+    <string>还原                      Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionchongzuo">
+   <property name="text">
+    <string>重做           Shift+Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionjianqie">
+   <property name="text">
+    <string>剪切                      Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionkaobei">
+   <property name="text">
+    <string>拷贝                      Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionzhantie">
+   <property name="text">
+    <string>粘贴                      Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionqingchu">
+   <property name="text">
+    <string>清除</string>
+   </property>
+  </action>
+  <action name="actiontianchong">
+   <property name="text">
+    <string>填充                    Shift+F5</string>
+   </property>
+  </action>
+  <action name="actionmiaobian">
+   <property name="text">
+    <string>描边</string>
+   </property>
+  </action>
+  <action name="actionshouxuanxiang">
+   <property name="text">
+    <string>首选项</string>
+   </property>
+  </action>
+  <action name="actionweitu">
+   <property name="text">
+    <string>位图</string>
+   </property>
+  </action>
+  <action name="actionhuidu">
+   <property name="text">
+    <string>灰度</string>
+   </property>
+  </action>
+  <action name="actionRGByanse">
+   <property name="text">
+    <string>RGB颜色</string>
+   </property>
+  </action>
+  <action name="actionCMYKyanse">
+   <property name="text">
+    <string>CMYK颜色</string>
+   </property>
+  </action>
+  <action name="action8wei_tongdao">
+   <property name="text">
+    <string>8位/通道</string>
+   </property>
+  </action>
+  <action name="action8wei_tongdao_2">
+   <property name="text">
+    <string>16位/通道</string>
+   </property>
+  </action>
+  <action name="action8wei_tongdao_3">
+   <property name="text">
+    <string>32位/通道</string>
+   </property>
+  </action>
+  <action name="actionliangdu_duibidu">
+   <property name="text">
+    <string>亮度/对比度</string>
+   </property>
+  </action>
+  <action name="actionsejie">
+   <property name="text">
+    <string>色阶</string>
+   </property>
+  </action>
+  <action name="actionqvxian">
+   <property name="text">
+    <string>曲线</string>
+   </property>
+  </action>
+  <action name="actionbaoguangdu">
+   <property name="text">
+    <string>曝光度</string>
+   </property>
+  </action>
+  <action name="actionziranbaohedu">
+   <property name="text">
+    <string>自然饱和度</string>
+   </property>
+  </action>
+  <action name="actionsexiang_baohedu">
+   <property name="text">
+    <string>色相/饱和度</string>
+   </property>
+  </action>
+  <action name="actionsecaipinheng">
+   <property name="text">
+    <string>色彩平衡</string>
+   </property>
+  </action>
+  <action name="actionheibai">
+   <property name="text">
+    <string>黑白</string>
+   </property>
+  </action>
+  <action name="actionfanxiang">
+   <property name="text">
+    <string>反相</string>
+   </property>
+  </action>
+  <action name="actionsediaofenli">
+   <property name="text">
+    <string>色调分离</string>
+   </property>
+  </action>
+  <action name="actionyuzhi">
+   <property name="text">
+    <string>阈值</string>
+   </property>
+  </action>
+  <action name="actionyingying_gaoguang">
+   <property name="text">
+    <string>阴影/高光</string>
+   </property>
+  </action>
+  <action name="actionqvse">
+   <property name="text">
+    <string>去色</string>
+   </property>
+  </action>
+  <action name="actiontihuanyanse">
+   <property name="text">
+    <string>替换颜色</string>
+   </property>
+  </action>
+  <action name="actionpipeiyanse">
+   <property name="text">
+    <string>匹配颜色</string>
+   </property>
+  </action>
+  <action name="actionzidongsediao">
+   <property name="text">
+    <string>自动色调                    Shift+Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionzidongduibidu">
+   <property name="text">
+    <string>自动对比度        Alt+Shift+Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionzidongyanse">
+   <property name="text">
+    <string>自动颜色                    Shift+Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actiontuxiangdaxiao">
+   <property name="text">
+    <string>图像大小                       Alt+Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionhuabudaxiao">
+   <property name="text">
+    <string>画布大小                       Alt+Ctrl+C</string>
+   </property>
+  </action>
+  <action name="action180du">
+   <property name="text">
+    <string>180度</string>
+   </property>
+  </action>
+  <action name="actionshushizhen90du">
+   <property name="text">
+    <string>顺时针90度</string>
+   </property>
+  </action>
+  <action name="actionnishizhen90du">
+   <property name="text">
+    <string>逆时针90度</string>
+   </property>
+  </action>
+  <action name="actionrenyijiaodu">
+   <property name="text">
+    <string>任意角度</string>
+   </property>
+  </action>
+  <action name="actioncaiqie">
+   <property name="text">
+    <string>裁切</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
