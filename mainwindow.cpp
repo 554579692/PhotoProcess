@@ -66,6 +66,7 @@ void MainWindow::OpenImage() //打开文件
         ui->label->setPixmap(QPixmap::fromImage(img));
         ImageProcess=img;
         huisezhifangtu(filename.toStdString());
+        zhifangtucanshu(filename.toStdString());
     }
 }
 
@@ -159,10 +160,37 @@ void MainWindow::zhifangtucanshu(std::string filename)//直方图参数
     int hist_size[] = {bins};
     float range[] = { 0, 256 };
     const float* ranges[] = { range};
-    for(int i=0;i<gray.col();i++)
+    int height=gray.rows;
+    int width=gray.cols;
+    //灰度图矩阵的长宽
+    int huidu[256]; //灰度图的统计数组
+    for(int i=0;i<256;i++) huidu[i]=0;
+    for(int i=0;i<height;i++)
     {
-
+        for(int j=0;j<width;j++)
+        {
+            int index=i*width+j;
+            int data=(int)gray.data[index];
+            huidu[data]++;
+        }
     }
+    int pixles=0;//像素总数
+    int mean=0; //平均数
+    int std_dev;//标准差
+    int median;//中间值
+
+    for(int i=0;i<256;i++)
+    {
+        pixles+=huidu[i];
+    }
+    cout<<"Pixles="<<pixles<<endl;
+    for(int i=0;i<256;i++)
+    {
+        mean+=huidu[i]*(i+1);
+    }
+    mean/=pixles;
+    cout<<"Mean="<<mean<<endl;
+
 }
 QImage MainWindow::Mat2QImage(cv::Mat cvImg)//Mat转Qimage
 {
