@@ -1,57 +1,53 @@
-#include "Histogram.h"
+#include "histogram.h"
+#include <QString>
+#include <QImage>
+#include <QVector>
 
 
-Histogram::Histogram(void)
+Histogram::Histogram(QString filename)
 {
-
+    qimage=redraw(filename);
 }
 
-
-Histogram::~Histogram(void)
+QImage Histogram::redraw(QString filename)
 {
-}
+    QImage image(filename);
+    if(!image.allGray())
+    {
+        image=image.convertToFormat(QImage::Format_Grayscale8);
+    }
+    if(!image.isNull())
+    {
+        int nWidth=image.width();
+        int nHeight=image.height();
+        QVector<double> vecX;
+        QVector<double> vecY(256,0);
 
-Mat Histogram::calcGray(String filename)
-{
-    // 图像源获取及判断
-       cv::Mat Image, ImageGray;
-       //Image = cv::imread("coins.png");
-       Image = cv::imread(filename);
-       //cv::imshow("Image",Image);
-       // 转换为灰度图像
-       cv::cvtColor(Image,ImageGray,CV_BGR2GRAY);
-       // 定义直方图参数
-       const int channels[1]={0};
-       const int histSize[1]={256};
-       float pranges[2]={0,255};
-       const float* ranges[1]={pranges};
-       cv::MatND hist;
-       // 计算直方图
-       cv::calcHist(&ImageGray,1,channels,cv::Mat(),hist,1,
-       histSize,ranges);
-       // 初始化画布参数
-       int hist_w = 500;
-       int hist_h = 500;
-       int nHistSize = 255;
-       // 区间
-       int bin_w = cvRound( (double) hist_w / nHistSize );
-       cv::Mat histImage( hist_w, hist_h,
-                CV_8UC3,   cv::Scalar( 0,0,0) );
-         // 将直方图归一化到范围 [ 0, histImage.rows ]
-         normalize(hist, hist, 0, histImage.rows,
-                  cv::NORM_MINMAX,  -1, cv::Mat() );
-         // 在直方图画布上画出直方图
-       for( int i = 1; i < nHistSize; i++ )//注意这里没有绘制255级的灰度值
-       {
-         cv::line( histImage, cv::Point(bin_w*(i-1),
-                hist_h-cvRound(hist.at<float>(i-1)) ) ,
-                cv::Point( bin_w*(i),
-                hist_h - cvRound(hist.at<float>(i)) ),
-                cv::Scalar( 0, 0, 255), 2, 8, 0  );
-       }
-       int hist_255;
-       hist_255=int(hist.at<float>(255));
-       // 显示直方图
-       //cv::imshow("histImage", histImage);
-       return histImage;
+        int i=0;
+        while(256!=i){
+            vecX.append(i);
+            ++i;
+        }
+        for (int j=0;j<nHeight;j++) {
+            for (int k = 0;k<nWidth;k++) {
+                int nIndex=int(image.bits()[j*nHeight+k]);
+                vecY[nIndex]=vecY.at(nIndex)+1;
+            }
+        }
+
+        double yMax=0;
+        for(int j=0;j<256;j++)
+        {
+            if(yMax<vecY.at(j))
+                yMax=vecY.at(j);
+        }
+        m_pChart->yAxis->setRange(0,yMax);
+        m_pChart->graph(0)->setData(vecX,vecY);
+                //    m_pChart->graph(0)->setPen(QPen(Qt::red));
+                m_pChart->replot();
+
+                //    qDebug() << "gray:" << image.bits();
+                image.scaled(800,600,Qt::AspectRatioMode::KeepAspectRatio);
+    }
+    return image;
 }

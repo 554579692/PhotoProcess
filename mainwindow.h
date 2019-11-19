@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include <QLabel>
 #include "opencv2/opencv.hpp"
-
+#include "histogram.h"
+#include <string>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -20,8 +21,9 @@ public:
 
 
     cv::Mat calcGrayHist(const cv::Mat & image); //灰度直方图
-    QImage mat2qim(cv::Mat &mat); //Mat to QImage
-    cv::Mat qim2mat(QImage & qim); //QImage to Mat
+    QImage Mat2QImage(cv::Mat cvImg); //Mat to QImage
+    cv::Mat QImage2Mat(QImage & qim); //QImage to Mat
+    void zhifangtu(Histogram histogram);
 
 private:
     Ui::MainWindow *ui;
@@ -34,6 +36,9 @@ public slots:
     void Saveas();      //存储为
     void caiyang();     //采样演示
     void lianghua();    //量化演示
+    void junhenghua(); //均衡化演示
+    void huisezhifangtu(std::string filename);//灰色直方图绘制
+    void zhifangtucanshu(std::string filename);//直方图参数
     //void SaveasImage();
 
 };

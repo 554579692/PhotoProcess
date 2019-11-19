@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1133</height>
+    <width>1199</width>
+    <height>615</height>
    </rect>
   </property>
   <property name="cursor">
@@ -26,285 +26,207 @@
    <number>0</number>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:#4d4d4d;
-color:#dddddd;
-font-size:11px;
-QAction,QMenu::hover
-{
-	background:#474747;
-}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QWidget" name="widget" native="true">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>20</y>
+      <width>291</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> background:#fefefe;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>271</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> background:#fefefe;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>831</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> background:#fefefe;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>811</width>
+       <height>511</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> background:#fefefe;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>250</y>
+      <width>291</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> background:#fefefe;</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Tab 1</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>80</width>
+        <height>15</height>
+       </rect>
       </property>
-      <property name="styleSheet">
-       <string notr="true">background:#272727;</string>
+      <property name="text">
+       <string>PushButton</string>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background:#282828;</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
      </widget>
-    </item>
-    <item>
-     <widget class="QToolBox" name="toolBox">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>80</width>
+        <height>15</height>
+       </rect>
       </property>
-      <property name="minimumSize">
-       <size>
-        <width>240</width>
-        <height>1080</height>
-       </size>
+      <property name="text">
+       <string>PushButton</string>
       </property>
-      <property name="maximumSize">
-       <size>
-        <width>240</width>
-        <height>1080</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background:#444;</string>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="page">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>240</width>
-         <height>1034</height>
-        </rect>
-       </property>
-       <attribute name="label">
-        <string>作业演示</string>
-       </attribute>
-       <widget class="QPushButton" name="pushButton">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>250</y>
-          <width>80</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>量化演示</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>290</y>
-          <width>80</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>采样演示</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>220</width>
-          <height>220</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background:#282828;</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="page_2">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>240</width>
-         <height>1034</height>
-        </rect>
-       </property>
-       <attribute name="label">
-        <string>Page 2</string>
-       </attribute>
-      </widget>
      </widget>
-    </item>
-   </layout>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>80</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>80</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Tab 2</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>页</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>页</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>页</string>
+     </attribute>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>190</y>
+      <width>291</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> background:#fefefe;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1920</width>
-     <height>19</height>
+     <width>1199</width>
+     <height>17</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QMenu" name="menu_4">
-    <property name="title">
-     <string>图层</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_5">
-    <property name="title">
-     <string>文字</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuxuanze">
-    <property name="title">
-     <string>选择</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_6">
-    <property name="title">
-     <string>滤镜</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_7">
-    <property name="title">
-     <string>视图</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_8">
-    <property name="title">
-     <string>窗口</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_9">
-    <property name="title">
-     <string>帮助</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_3">
-    <property name="title">
-     <string>图像</string>
-    </property>
-    <widget class="QMenu" name="menumoshi">
-     <property name="title">
-      <string>模式</string>
-     </property>
-     <addaction name="actionweitu"/>
-     <addaction name="actionhuidu"/>
-     <addaction name="actionRGByanse"/>
-     <addaction name="actionCMYKyanse"/>
-     <addaction name="separator"/>
-     <addaction name="action8wei_tongdao"/>
-     <addaction name="action8wei_tongdao_2"/>
-     <addaction name="action8wei_tongdao_3"/>
-    </widget>
-    <widget class="QMenu" name="menutiaozhen">
-     <property name="title">
-      <string>调整</string>
-     </property>
-     <addaction name="actionliangdu_duibidu"/>
-     <addaction name="actionsejie"/>
-     <addaction name="actionqvxian"/>
-     <addaction name="actionbaoguangdu"/>
-     <addaction name="separator"/>
-     <addaction name="actionziranbaohedu"/>
-     <addaction name="actionsexiang_baohedu"/>
-     <addaction name="actionsecaipinheng"/>
-     <addaction name="actionheibai"/>
-     <addaction name="separator"/>
-     <addaction name="actionfanxiang"/>
-     <addaction name="actionsediaofenli"/>
-     <addaction name="actionyuzhi"/>
-     <addaction name="separator"/>
-     <addaction name="actionyingying_gaoguang"/>
-     <addaction name="separator"/>
-     <addaction name="actionqvse"/>
-     <addaction name="actiontihuanyanse"/>
-     <addaction name="actionpipeiyanse"/>
-    </widget>
-    <widget class="QMenu" name="menutuxaingxuanzhuan">
-     <property name="title">
-      <string>图像旋转</string>
-     </property>
-     <addaction name="action180du"/>
-     <addaction name="actionshushizhen90du"/>
-     <addaction name="actionnishizhen90du"/>
-     <addaction name="actionrenyijiaodu"/>
-    </widget>
-    <addaction name="menumoshi"/>
-    <addaction name="menutiaozhen"/>
-    <addaction name="separator"/>
-    <addaction name="actionzidongsediao"/>
-    <addaction name="actionzidongduibidu"/>
-    <addaction name="actionzidongyanse"/>
-    <addaction name="separator"/>
-    <addaction name="actiontuxiangdaxiao"/>
-    <addaction name="actionhuabudaxiao"/>
-    <addaction name="menutuxaingxuanzhuan"/>
-    <addaction name="actioncaiqie"/>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="styleSheet">
-     <string notr="true">QMenu::hover{
-background:#747474;
-}</string>
-    </property>
-    <property name="title">
-     <string>编辑</string>
-    </property>
-    <addaction name="actioncaijian"/>
-    <addaction name="actionchongzuo"/>
-    <addaction name="separator"/>
-    <addaction name="actionjianqie"/>
-    <addaction name="actionkaobei"/>
-    <addaction name="actionzhantie"/>
-    <addaction name="actionqingchu"/>
-    <addaction name="separator"/>
-    <addaction name="actiontianchong"/>
-    <addaction name="actionmiaobian"/>
-    <addaction name="separator"/>
-    <addaction name="actionshouxuanxiang"/>
-   </widget>
    <widget class="QMenu" name="menu">
     <property name="styleSheet">
      <string notr="true"/>
@@ -312,28 +234,16 @@ background:#747474;
     <property name="title">
      <string>文件</string>
     </property>
-    <addaction name="actionopen_file"/>
     <addaction name="actiondakai"/>
-    <addaction name="actionzuijindakaiwenjian"/>
     <addaction name="separator"/>
     <addaction name="actionguanbi"/>
     <addaction name="actioncunchu"/>
     <addaction name="actioncunchuwei"/>
     <addaction name="separator"/>
-    <addaction name="actiondaochu"/>
     <addaction name="separator"/>
     <addaction name="actiontuichu"/>
    </widget>
    <addaction name="menu"/>
-   <addaction name="menu_2"/>
-   <addaction name="menu_3"/>
-   <addaction name="menu_4"/>
-   <addaction name="menu_5"/>
-   <addaction name="menuxuanze"/>
-   <addaction name="menu_6"/>
-   <addaction name="menu_7"/>
-   <addaction name="menu_8"/>
-   <addaction name="menu_9"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNew_file">

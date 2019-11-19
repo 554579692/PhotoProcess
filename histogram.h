@@ -1,20 +1,25 @@
+#ifndef HISTOGRAM_H
+#define HISTOGRAM_H
+#include<QString>
+#include<QWidget>
+#include <QImage>
+#include "qcustomplot.h"
 #include <opencv2/opencv.hpp>
-#include <iostream>
-
-using namespace cv;
-
 class Histogram
 {
-public:
-    Histogram(void);
-    ~Histogram(void);
-    Mat calcGray(String filename);
-    Mat calcH_s(String filename);
-    Mat calcBGR(String filename);
+public: 
+    Histogram(QString filename);
+    int pixels;  //像素总数
+    int level;  //灰度级别
+    int mean;  //平均值
+    int median;//中间值
+    int count;
+    int percentile;
+    QImage redraw(QString filename);
+    QImage qimage;
+    QCustomPlot *m_pChart;
 private:
-    String pingjunhuidu;   //平均灰度
-    String zhongzhihuidu;  //中值灰度
-    String biaozhuncha;    //标准差
-    String xiangsuzongshu; //像素总数
 
 };
+
+#endif // HISTOGRAM_H
