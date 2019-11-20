@@ -26,7 +26,7 @@
    <number>0</number>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background:#ddd;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame_2">
@@ -39,7 +39,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background:#fefefe;</string>
+     <string notr="true"> background:#eee;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -57,7 +57,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true"> background:#fefefe;</string>
+      <string notr="true"> background:#eee;</string>
      </property>
      <property name="text">
       <string/>
@@ -74,7 +74,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background:#fefefe;</string>
+     <string notr="true"> background:#eee;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -98,7 +98,7 @@
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true"> background:#fefefe;</string>
+      <string notr="true"> background:#eee;</string>
      </property>
      <property name="text">
       <string/>
@@ -115,14 +115,14 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background:#fefefe;</string>
+     <string notr="true"> background:#eee;</string>
     </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
-      <string>Tab 1</string>
+      <string>演示</string>
      </attribute>
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
@@ -134,7 +134,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>采样率</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_2">
@@ -147,7 +147,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>量化</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_3">
@@ -160,7 +160,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>二值化</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_4">
@@ -173,7 +173,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>bmp2txt</string>
       </property>
      </widget>
     </widget>
@@ -208,7 +208,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background:#fefefe;</string>
+     <string notr="true"> background:#eee;</string>
     </property>
     <property name="text">
      <string/>

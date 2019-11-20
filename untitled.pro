@@ -19,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     histogram.cpp \
     image.cpp \
+    image_8.cpp \
     main.cpp \
     mainwindow.cpp \
     qcustomplot.cpp
@@ -26,12 +27,13 @@ SOURCES += \
 HEADERS += \
     histogram.h \
     image.h \
+    image_8.h \
     mainwindow.h \
     qcustomplot.h
 
 FORMS += \
-    mainwindow.ui \
-    mainwindow2.ui
+    image_8.ui \
+    mainwindow.ui
 
 INCLUDEPATH += D:/opencv/opencv/build/include/ \
                D:/opencv/opencv/build/include/opencv\

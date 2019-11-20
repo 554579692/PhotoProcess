@@ -6,6 +6,7 @@
 #include "opencv2/opencv.hpp"
 #include "histogram.h"
 #include <string>
+#include <image_8.h>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -18,7 +19,7 @@ public:
     QString LastFilename;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    image_8 lianghua_ui;
 
     cv::Mat calcGrayHist(const cv::Mat & image); //灰度直方图
     QImage Mat2QImage(cv::Mat cvImg); //Mat to QImage
@@ -36,10 +37,11 @@ public slots:
     void Saveas();      //存储为
     void caiyang();     //采样演示
     void lianghua();    //量化演示
+    void erzhihua();    //二值化演示
+    void bmp2txt();     //bmp2txt演示
     void junhenghua(); //均衡化演示
     void huisezhifangtu(std::string filename);//灰色直方图绘制
     void zhifangtucanshu(std::string filename);//直方图参数
     //void SaveasImage();
-
 };
 #endif // MAINWINDOW_H

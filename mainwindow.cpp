@@ -9,7 +9,9 @@
 #include "qcustomplot.h"
 #include "image.h"
 #include <string>
+#include <sstream>
 #include<iostream>
+#include"image_8.h"
 using namespace cv;
 using namespace std;
 MainWindow::MainWindow(QWidget *parent)
@@ -22,13 +24,16 @@ MainWindow::MainWindow(QWidget *parent)
     ImageDefault.load("D:\\imageprocess\\default.png");
     ui->label->setPixmap(QPixmap::fromImage(ImageDefault));
     ImageProcess=ImageDefault;
+    image_8 lianghua_ui;
     //ui->label->setScaledContents(true);
     //ui->label->resize(ui->widget->size());
     connect(ui->actiondakai, SIGNAL(triggered(bool)), this, SLOT(OpenImage())); //打开
     connect(ui->actioncunchu, SIGNAL(triggered(bool)), this, SLOT(SaveImage()));//存储
     connect(ui->actioncunchuwei, SIGNAL(triggered(bool)), this, SLOT(Saveas()));//存储为
-    connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(huisezhifangtu())); //
-    connect(ui->pushButton_2,SIGNAL(clicked()),this,SLOT(junhenghua()));
+    connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(caiyang())); //采样率
+    connect(ui->pushButton_2,SIGNAL(clicked()),this,SLOT(lianghua())); //量化
+    connect(ui->pushButton_3,SIGNAL(clicked()),this,SLOT(erzhihua())); //二值化
+    connect(ui->pushButton_4,SIGNAL(clicked()),this,SLOT(bmp2txt())); //bmp2txt
 
 }
 
@@ -64,6 +69,7 @@ void MainWindow::OpenImage() //打开文件
         }
         img=img.scaled(ui->label->size(), Qt::KeepAspectRatio);
         ui->label->setPixmap(QPixmap::fromImage(img));
+        ui->label->setAlignment(Qt::AlignCenter);
         ImageProcess=img;
         huisezhifangtu(filename.toStdString());
         zhifangtucanshu(filename.toStdString());
@@ -94,10 +100,29 @@ void MainWindow::Saveas() //存储为
 
 void MainWindow::lianghua()  //量化演示
 {
-
+    if(!LastFilename.isNull())
+    lianghua_ui.LastFilename=LastFilename;
+    lianghua_ui.lianghua();
+    lianghua_ui.show();
 }
 
 void MainWindow::caiyang()    //采样演示
+{
+    if(!LastFilename.isNull())
+    lianghua_ui.LastFilename=LastFilename;
+    lianghua_ui.caiyang();
+    lianghua_ui.show();
+}
+
+void MainWindow::erzhihua()  //二值化演示
+{
+    if(!LastFilename.isNull())
+    lianghua_ui.LastFilename=LastFilename;
+    lianghua_ui.erzhihua();
+    lianghua_ui.show();
+}
+
+void MainWindow::bmp2txt()  //bmp2txt演示
 {
 
 }
@@ -148,6 +173,7 @@ void MainWindow::huisezhifangtu(string filename)
         int Owidth=hists.width(),Oheight=hists.height();
         hists=hists.scaled(Owidth/2,Oheight/2,Qt::KeepAspectRatio);
         ui->label_2->setPixmap(QPixmap::fromImage(hists));
+        ui->label_2->setAlignment(Qt::AlignCenter);
         //imshow( "Source", src );
         //imshow( "Gray Histogram", hist_img );
 }
@@ -156,10 +182,6 @@ void MainWindow::zhifangtucanshu(std::string filename)//直方图参数
     Mat src,gray;
     src=imread(filename);
     cvtColor(src,gray,CV_RGB2GRAY);
-    int bins = 256;
-    int hist_size[] = {bins};
-    float range[] = { 0, 256 };
-    const float* ranges[] = { range};
     int height=gray.rows;
     int width=gray.cols;
     //灰度图矩阵的长宽
@@ -175,21 +197,51 @@ void MainWindow::zhifangtucanshu(std::string filename)//直方图参数
         }
     }
     int pixles=0;//像素总数
-    int mean=0; //平均数
-    int std_dev;//标准差
+    double mean=0; //平均数
+    double fangcha;//方差
+    double std_dev;//标准差
     int median;//中间值
 
     for(int i=0;i<256;i++)
     {
         pixles+=huidu[i];
     }
-    cout<<"Pixles="<<pixles<<endl;
+    cout<<"Pixles="<<pixles<<endl;//像素总数
+
     for(int i=0;i<256;i++)
     {
         mean+=huidu[i]*(i+1);
     }
     mean/=pixles;
-    cout<<"Mean="<<mean<<endl;
+    cout<<"Mean="<<mean<<endl;//平均灰度
+
+    for (int i=0;i<256;i++)
+    {
+        fangcha+=pow(huidu[i]-mean,2);
+    }
+    fangcha/=256;
+    std_dev=sqrt(fangcha);
+    cout<<"Std_dev="<<std_dev<<endl;//标准差
+    int x=0;
+    for(int i=0;i<256;i++)
+    {
+        x+=huidu[i];
+        if(x>=pixles/2)
+        {
+            median=i;
+            break;
+        }
+    }
+    cout<<"Median="<<median<<endl;//中间值
+
+    //将内容显示到控件上
+    QString zhifangtu_info;
+    zhifangtu_info="Mean: "+QString::number(mean, 10, 4)+"\nStd_dev: "+QString::number(std_dev, 10, 4)+"\nMedian: "+QString::number(median, 10, 4)+"\nPixels: "+QString::number(pixles, 10)+"\n";
+    //zhifangtu_info<<"Mean: "<<mean<<endl<<"Std_dev: "<<std_dev<<endl<<"Median: "<<median<<endl<<"Pixels: "<<endl;
+    //string zft_info;
+    //zhifangtu_info>>zft_info;
+    ui->label_3->setText(zhifangtu_info);
+    ui->label_3->setAlignment(Qt::AlignCenter);
 
 }
 QImage MainWindow::Mat2QImage(cv::Mat cvImg)//Mat转Qimage
